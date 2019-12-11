@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class project  {
+
+    public static int maxitems = 99;
+    public static String[][] database = new String[4][maxitems];
+        //description, catagory, amount, ID
+    
+    public static void main(String[] args) {
+    
+        //Scanner scan = new Scanner(System.in);
+        
+        database[0][0] = "Yo";
+        database[1][0] = "food";
+        database[2][0] = "10";
+        database[3][0] = "1";
+
+        
+        //System.out.println(SortByCategory(database));
+        //System.out.println(Total(database));
+        //System.out.println(Average(database));
+
+        
+        
+    }
+    
+    
+    
+    public static String SortByCategory(String[][] array)
+        {
+            int foodcount = 0;
+            int funcount = 0;
+            int clothingcount = 0;
+            for (int i = 0; i < array[1].length - 1; i++) {
+                if ( array[1][i].equals("food"))
+                {
+                    foodcount += 1;
+                }
+                else if (array[1][i].equals("fun"))
+                {
+                    funcount += 1;
+                }
+                else if (array[1][i].equals("clothing"))
+                { 
+                    clothingcount += 1;
+                }
+            }
+            String counts = "Counts: " + foodcount + "" + funcount + "" + clothingcount;
+            return counts;
+        }
+        
+        public static int Total(String[][] array) {
+            int total = 0;
+            for (int i = 0; i < array[2].length - 1; i++) {
+                total += Integer.parseInt(array[2][i]);
+            }
+            return total;
+        }
+        
+        public static int Average(String[][] array) {
+            return Total(array) / array[2].length;
+        }
+}
